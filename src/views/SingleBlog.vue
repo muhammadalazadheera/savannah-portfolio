@@ -19,11 +19,13 @@
         </div>
 
         <div class="" v-html="FireStore.blog.body"></div>
+        <div id="commento"></div>
     </div>
 </template>
 
 <script>
     import { useFirestore } from '@/stores/FireStore';
+    import "https://cdn.commento.io/js/commento.js";
     export default {
         data() {
             const FireStore = useFirestore();

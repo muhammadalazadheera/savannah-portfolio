@@ -5,7 +5,7 @@
             <div class="w-full flex flex-col my-10">
                 <!-- Single Blog Starts -->
                  <KeepAlive>
-                <div ref="blogsContainer" v-for="blog in blogs" :key="blog.id" class="shadow-sm flex flex-col p-4 sm:p-0 sm:flex-row mb-7">
+                <div ref="blogsContainer" v-for="blog in FireStore.blogs" :key="blog.id" class="shadow-sm flex flex-col p-4 sm:p-0 sm:flex-row mb-7">
                     <div class="md:w-2/5 sm:w-4/5">
                         <img class="w-full block" width="454" :src="blog.featured_image">
                     </div>
@@ -48,7 +48,6 @@
             return {
                 FireStore,
                 moment,
-                blogs: []
             }
         },
         components:{
@@ -59,9 +58,7 @@
         },
         methods: {
             async getBlogs() {
-                this.blogs = []; 
-                await this.FireStore.getBlog();
-                this.blogs = [...this.FireStore.blogs];
+                await this.FireStore.getBlogs();
             },
             excerpt(text, length) {
                 if (text.length > length) {

@@ -19,13 +19,13 @@
         </div>
 
         <div class="" v-html="FireStore.blog.body"></div>
-        <div id="commento"></div>
+        <div class="commentbox"></div>
     </div>
 </template>
 
 <script>
     import { useFirestore } from '@/stores/FireStore';
-    import "https://cdn.commento.io/js/commento.js";
+    import 'https://unpkg.com/commentbox.io/dist/commentBox.min.js'
     export default {
         data() {
             const FireStore = useFirestore();
@@ -35,11 +35,12 @@
         },
         methods: {
             async getSingleBlog() {
-                await this.FireStore.getSingleBlog(this.$route.params.id)
+                await this.FireStore.getBlog(this.$route.params.id)
             }
         },
         mounted() {
             this.getSingleBlog()
+            commentBox('5748224216268800-proj')
         }
     }
 </script>

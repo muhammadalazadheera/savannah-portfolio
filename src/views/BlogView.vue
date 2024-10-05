@@ -4,12 +4,11 @@
             <div class="title font-din w-3/5 text-center border py-2 my-5 text-xl shadow-sm"><p class="uppercase">Blogs</p></div>
             <div class="w-full flex flex-col my-10">
                 <!-- Single Blog Starts -->
-                 <KeepAlive>
                 <div ref="blogsContainer" v-for="blog in FireStore.blogs" :key="blog.id" class="shadow-sm flex flex-col p-4 sm:p-0 sm:flex-row mb-7">
                     <div class="md:w-2/5 sm:w-4/5">
-                        <img class="w-full block" width="454" :src="blog.featured_image">
+                        <img class="w-full block" :src="blog.featured_image">
                     </div>
-                    <div class="w-3/5 border sm:border-l-0 p-8 flex flex-col justify-between">
+                    <div class="w-full md:w-3/5 border sm:border-l-0 p-8 flex flex-col justify-between">
                         <div class="">
                             <div class="flex">
                                 <div class="w-8 h-8"><img class="rounded-full w-full h-full" src="../assets/images/author.png" alt=""></div>
@@ -30,8 +29,7 @@
                             </div>
                         </div>
                     </div>
-                </div>   
-                </KeepAlive>
+                </div>
                 <!-- Single Blog Ends -->
             </div>
         </div>

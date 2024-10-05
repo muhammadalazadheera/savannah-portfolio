@@ -17,11 +17,11 @@
         <form @submit.prevent="editBook" novalidate>
             <div class="flex mb-4">
                 <label class="w-36 pt-2 text-xl font-din" for="name">Name</label>
-                <input v-model="name" class="border focus-visible:outline-none w-full h-10 rounded px-2" id="name" type="text" placeholder="Wing of Fire">
+                <input v-model="name" class="border focus-visible:outline-none w-full h-10 rounded px-2" id="name" type="text">
             </div>
             <div class="flex mb-4">
                 <label class="w-36 pt-2 text-xl font-din" for="author">Author</label>
-                <input v-model="author" class="border focus-visible:outline-none w-full h-10 rounded px-2" id="author" type="text" placeholder="A. P. J. Abdul Kalam">
+                <input v-model="author" class="border focus-visible:outline-none w-full h-10 rounded px-2" id="author" type="text">
             </div>
             <div class="flex mb-4">
                 <label class="w-36 pt-2 text-xl font-din" for="title">Cover Photo</label>
@@ -41,7 +41,7 @@
             </div>
             <div class="flex">
               <div class="w-36 pt-2"></div>
-              <input type="submit" value="ADD NEW BOOK" class="w-full p-2 bg-black font-din-regular text-lg text-white rounded">
+              <input type="submit" value="EDIT BOOK" class="w-full p-2 bg-black font-din-regular text-lg text-white rounded">
             </div>
         </form>
       </div>
@@ -62,12 +62,14 @@
                 cover_photo: '',
                 link: '',
                 order_no: '',
-                is_featured: false
+                is_featured: ''
             }
         },
         methods: {
             async getBook() {
                 await this.BookStore.getBook(this.$route.params.id)
+                    this.name = this.BookStore.book.name
+                    this.author = this.BookStore.book.author
                     this.cover_photo = this.BookStore.book.cover_photo
                     this.link = this.BookStore.book.link
                     this.order_no = this.BookStore.book.order_no

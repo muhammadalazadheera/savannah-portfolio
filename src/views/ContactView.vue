@@ -16,7 +16,12 @@
                 </div>
                 <div class="mb-3">
                     <select id="subject" class="block w-full h-8 focus-visible:outline-none focus-visible:border-black">
-                        <option value="" disabled selected>Subject</option>
+                        <option disabled selected>Subject</option>
+                        <option value="1">General Query</option>
+                        <option value="1">Media Request</option>
+                        <option value="1">Academic Opportunities</option>
+                        <option value="1">Hate Mail</option>
+                        <option value="1">Others</option>
                     </select>
                 </div>
                 <textarea class="w-full border mt-3 p-3 focus-visible:outline-none focus-visible:border-black" id="message" rows="3" placeholder="Message"></textarea>

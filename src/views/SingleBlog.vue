@@ -23,6 +23,7 @@
     </div>
 </template>
 
+
 <script>
     import { useFirestore } from '@/stores/FireStore';
     import 'https://unpkg.com/commentbox.io/dist/commentBox.min.js'

@@ -19,7 +19,7 @@
         </div>
 
         <div class="" v-html="FireStore.blog.body"></div>
-        <div class="commentbox my-14 border p-6"></div>
+        <div class="commentbox mt-14 border p-6"></div>
     </div>
 </template>
 

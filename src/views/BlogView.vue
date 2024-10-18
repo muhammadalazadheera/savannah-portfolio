@@ -1,7 +1,7 @@
 <template>
     <div class="">
         <div class="w-full flex flex-col items-center justify-center">
-            <div class="title font-din w-3/5 text-center border py-2 my-5 text-xl shadow-sm"><p class="uppercase">Blogs</p></div>
+            <div class="title font-din-medium w-3/5 text-center border py-2 my-5 text-xl"><p class="uppercase">Blogs</p></div>
             <div class="w-full flex flex-col my-10">
                 <!-- Single Blog Starts -->
                 <div ref="blogsContainer" v-for="blog in FireStore.blogs" :key="blog.id" class="shadow-sm flex flex-col p-4 sm:p-0 sm:flex-row mb-7">
